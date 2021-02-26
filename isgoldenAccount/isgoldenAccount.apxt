@@ -1,0 +1,4 @@
+trigger isgoldenAccount on Opportunity (before insert) 
+{
+ isgoldenAccount.ConnectTrigger1();
+}

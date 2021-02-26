@@ -1,0 +1,11 @@
+public class isgoldenAccount {
+public static void ConnectTrigger1(){
+List<Opportunity> newList = [Select Amount, Account.is_goldenAccount__c FROM Opportunity WHERE Amount >= 50];
+for(Opportunity p : newList)
+{
+p.Account.is_goldenAccount__c = TRUE;
+update p;
+system.debug('Updated Successfully');
+}
+}
+}
