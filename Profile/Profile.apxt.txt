@@ -1,0 +1,3 @@
+trigger Profile on Account (after update) {
+    Profile.ConnectTrigger3();
+}

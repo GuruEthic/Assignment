@@ -1,0 +1,12 @@
+public static void ConnectTrigger3(){
+for (Contact p: [SELECT Id, FirstName, LastName, Account.Id, Account.Website from
+Contact Where Account.Id IN:[SELECT Account.Website From Account WHERE
+Account.Website != NULL]])
+{
+p.profile__c = p.Account.Website + '/' + p.FirstName.left(1) + p.LastName;
+system.debug('profile = '+ p.Profile__c);
+system.debug('Updated Successfully');
+update p;
+}
+}
+}
