@@ -1,0 +1,3 @@
+trigger OnlyDefaultContact on Account (after insert) {
+OnlyDefaultContact.ConnectTrigger2();
+}
