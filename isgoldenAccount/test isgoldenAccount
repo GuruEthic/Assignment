@@ -1,1 +1,15 @@
-@
+@isTest public class GoldenTriggerTest {
+    @isTest static void isgoldenAccount()
+    {
+        Account acc = new Account();
+        acc.name='asrfv';
+        insert acc;
+        Opportunity o=new Opportunity();
+        o.AccountId=acc.id;
+        o.name='fdecfg';
+        o.closedate=Date.valueOf('2021-05-01');
+        o.stageName='Need Analysis';
+        insert o;
+        System.assertequals(acc.is_goldenAccount__c=true,acc.is_goldenAccount__c=true);    
+    }
+}
