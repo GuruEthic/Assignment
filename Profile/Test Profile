@@ -1,1 +1,19 @@
-@
+@isTest public class TestTriggerHandler {
+   @isTest public static void testAccountWebsite(){
+       Account b = new Account();
+        b.Name = 'ProfileTest';
+        insert b;
+        id G = b.id;
+        Contact con = new Contact();
+        con.LastName = 'jeo';
+        con.FirstName = 'rio';
+        con.AccountId = G ;
+        insert con;            
+        Test.startTest();
+        b.Website = 'www.jr.com';
+        update b;
+        Contact cont = [Select id, Profile__c from Contact Where id=:con.Id ];      
+        System.assertEquals('testwebsite/Jrio', con.Profile__c);
+        Test.stopTest();
+    }
+}
