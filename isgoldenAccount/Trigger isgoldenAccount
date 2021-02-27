@@ -1,4 +1,4 @@
-trigger isgoldenAccount on Opportunity (before insert) 
+trigger isgoldenAccount on Opportunity (after insert, after update) 
 {
  isgoldenAccount.ConnectTrigger1();
 }
